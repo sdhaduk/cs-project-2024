@@ -8,6 +8,8 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Check } from "lucide-react";
 
 export default function Register_NP() {
   return (
@@ -36,6 +38,15 @@ export default function Register_NP() {
           <div className="space-y-2">
             <Label htmlFor="password">Confirm Password</Label>
             <Input id="password" required type="password" />
+          </div>
+          <div className="space-y-2">
+            <Checkbox id="donor" />
+            <label
+              htmlFor="donor"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 ml-2"
+            >
+              Check this box if you are donor
+            </label>
           </div>
           <Button className="w-full" type="submit">
             Register
