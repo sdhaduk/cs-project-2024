@@ -14,20 +14,19 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <Card className="w-[300px]">
+      <Card className="w-[350px]">
         <CardHeader>
-          <CardTitle className="text-center">Welcome!</CardTitle>
-          <CardDescription className="text-center">
-            Click Login if you are a non-profit organization, otherwise choose
-            Donor
+          <CardTitle>Welcome!</CardTitle>
+          <CardDescription>
+            Click register if you do not have an account
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Link href={"/login/nonprofit"}>
-            <Button className="ml-4">Login</Button>
+          <Link href={"/login"}>
+            <Button variant={"secondary"}>Login</Button>
           </Link>
-          <Link href={"/login/donor"}>
-          <Button className="ml-20">Donor</Button>
+          <Link href={"/register"}>
+            <Button className="ml-2">Register</Button>
           </Link>
         </CardContent>
       </Card>
