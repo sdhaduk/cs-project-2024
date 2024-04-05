@@ -27,7 +27,7 @@ export default function Home() {
             <Button className="ml-4">Login</Button>
           </Link>
           <Link href={"/login/donor"}>
-            <Button className="ml-20">Donor</Button>
+          <Button className="ml-20">Donor</Button>
           </Link>
         </CardContent>
       </Card>
