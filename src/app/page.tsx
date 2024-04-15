@@ -22,11 +22,8 @@ export default function Home() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Link href={"/login"}>
-            <Button variant={"secondary"}>Login</Button>
-          </Link>
           <Link href={"/register"}>
-            <Button className="ml-2">Register</Button>
+            <Button>Register</Button>
           </Link>
         </CardContent>
       </Card>
