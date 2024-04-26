@@ -1,3 +1,5 @@
+import RequestForm from "@/components/RequestForm";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import React from "react";
@@ -11,9 +13,21 @@ const Request = async (props: Props) => {
     return redirect("/");
   }
 
-  
-
-  return <div>Request</div>;
+  return (
+    <div className="flex justify-center items-center min-h-screen">
+      <Card className="w-[800px]">
+        <CardHeader>
+          <CardTitle>Make a Request</CardTitle>
+          <CardDescription>
+            Fill in the title and description of the request
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <RequestForm />
+        </CardContent>
+      </Card>
+    </div>
+  );
 };
 
 export default Request;

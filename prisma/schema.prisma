@@ -18,7 +18,8 @@ model User {
   email   String   @unique
   password String 
   role    Role
-  posts   Request[]
+  posts   Request[] @relation("Author")
+  donated Request[]  @relation("Donor")
   profile Profile?
 }
 
@@ -34,10 +35,12 @@ model Request {
   createdAt  DateTime   @default(now())
   updatedAt  DateTime   @updatedAt
   title      String
+  description String
   filled     Boolean
-  author     User       @relation(fields: [authorId], references: [id])
-  authorId   Int
-  
+  author     User       @relation(name: "Author", fields: [authorEmail], references: [email])
+  authorEmail   String
+  donator User?  @relation(name: "Donor", fields: [donorEmail], references: [email])
+  donorEmail String? 
 }
 
 enum Role {
