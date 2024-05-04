@@ -1,36 +1,38 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+- **Next.js**: Server-side rendering, API routes, built-in routing.
+- **Prisma ORM**: Robust database management with support for strong typing.
+- **NextAuth.js**: Simplified authentication with various providers.
+
 ## Getting Started
 
 First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (version 14 or later recommended)
+- A supported database (PostgreSQL, MySQL, etc.) for Prisma
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+   
+2. Navigate into the project directory and run:
+   ```cd cs-project-2024```
+   then
+   ```npm install```
+   
+3. Copy the .env.example file to .env and update it with your database connection string and any other necessary environment variables.
+   DATABASE_URL="your-database-url"
+   NEXTAUTH_URL="http://localhost:3000"
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+4. Initialize Prisma:
+   - run ```npm install prisma -D```
+   - run ```npx prisma migrate dev --name init``` (Make sure you have successfully followed step 3 or this will not work)
+   - then run ```npx prisma generate```
 
-## Learn More
+6. Then just run npm run dev to start the server and click on the link to be brought to the homepage.
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
