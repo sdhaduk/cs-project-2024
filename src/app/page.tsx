@@ -22,11 +22,13 @@ export default async function Home() {
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <Card className="w-[350px]">
+      <Card className="w-[500px]">
         <CardHeader>
-          <CardTitle>Welcome!</CardTitle>
+          <CardTitle>Welcome to Charitable Hearts</CardTitle>
           <CardDescription>
-            Click register if you do not have an account
+            Charitable Hearts provides a dynamic platform where non-profit
+            organizations can request donations, enabling donor organizations to
+            seamlessly meet these needs.
           </CardDescription>
         </CardHeader>
         <CardContent>

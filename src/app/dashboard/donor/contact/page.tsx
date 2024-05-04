@@ -1,4 +1,4 @@
-import NonProfitContact from "@/components/NonProfitContact";
+import DonorContact from "@/components/DonorContact";
 import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
@@ -13,7 +13,7 @@ const Contact = async (props: Props) => {
 
   return (
     <div className="mt-28 mx-80">
-      <NonProfitContact />
+      <DonorContact />
     </div>
   );
 };

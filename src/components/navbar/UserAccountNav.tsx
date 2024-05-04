@@ -1,7 +1,6 @@
 "use client";
 import { User } from "next-auth";
 import { signOut } from "next-auth/react";
-import { Button } from "../ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -24,7 +23,7 @@ const UserAccountNav = ({ user }: Props) => {
           <UserRound />
         </DropdownMenuTrigger>
 
-        <DropdownMenuContent className="bg-white" align="end">
+        <DropdownMenuContent className="absolute bg-white" align="end">
           <div className="flex items-center justify-start gap-2 p-2">
             <div className="flex flex-col space-y-1 leading-none">
               {user.email && <p className="font-medium">{user.email}</p>}
@@ -80,10 +79,12 @@ const UserAccountNav = ({ user }: Props) => {
 
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link href="/">View requests</Link>
+            <Link href="/dashboard/donor/requestFilled">
+              View filled requests
+            </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href="/">Contact a NonProfit</Link>
+            <Link href="/dashboard/donor/contact">Contact a NonProfit</Link>
           </DropdownMenuItem>
 
           <DropdownMenuSeparator />

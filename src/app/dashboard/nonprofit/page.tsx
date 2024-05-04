@@ -1,3 +1,4 @@
+import Dashboard from "@/components/NonProfitDashboard";
 import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
 
@@ -10,7 +11,7 @@ const page = async (props: Props) => {
     return redirect("/");
   }
 
-  return <div>page</div>;
+  return <Dashboard />;
 };
 
 export default page;

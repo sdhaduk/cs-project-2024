@@ -1,0 +1,38 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import MediaCard from "@/components/DonorCard";
+
+type Props = {};
+
+const Dashboard = (props: Props) => {
+  const [requests, setRequests] = useState<any[] | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/api/getAllRequests");
+      const data = await response.json();
+      setRequests(data.allRequests);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div> 
+      {requests ? (
+        <div className="mt-10 mx-5 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          {requests.map((request) => (
+            <MediaCard key={request._id} request={request} />
+          ))}
+        </div>
+      ) : (
+        <div className="flex justify-center items-center min-h-screen">
+          <h2 className="text-4xl dark:text-white">
+            There are no unfilled requests!
+          </h2>
+        </div>
+      )}
+    </div>
+  );
+};
+export default Dashboard;

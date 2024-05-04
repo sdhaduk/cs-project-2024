@@ -1,7 +1,6 @@
-import Dashboard from "@/components/DonorDashboard";
+import DonorFilledRequests from "@/components/DonorFilledRequests";
 import { getAuthSession } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import React from "react";
 
 type Props = {};
 
@@ -9,10 +8,10 @@ const page = async (props: Props) => {
   const session = await getAuthSession();
 
   if (!session?.user) {
-    redirect("/");
+    return redirect("/");
   }
 
-  return <Dashboard />;
+  return <DonorFilledRequests />;
 };
 
 export default page;
